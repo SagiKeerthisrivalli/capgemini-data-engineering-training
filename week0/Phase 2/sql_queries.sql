@@ -36,10 +36,9 @@ GROUP BY customer_id;
 
 -- 6. Customers with More Than One Order
 
-SELECT customer_id, COUNT(order_id) AS order_count
-FROM orders
-GROUP BY customer_id
-HAVING COUNT(order_id) > 1;
+select o1.customer_id
+from Orders o1 join Orders o2
+where o1.customer_id=o2.customer_id and o1.order_id <> o2.order_id
 
 -- 7. Sort Customers by Total Spend Descending
 
