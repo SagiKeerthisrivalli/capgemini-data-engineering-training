@@ -27,11 +27,11 @@ clean_df = clean_df.filter(col("age") > 0)
 
 #After cleaning count
 print("After cleaning Rows:", clean_df.count())
+print("Before cleaning data")
+df.show()
 
 #Perform aggregation (customers per city)
+print("After cleaning data")
 clean_df.groupBy("city") \
         .agg(count("customer_id").alias("customer_count")) \
         .show()
-
-
-  
