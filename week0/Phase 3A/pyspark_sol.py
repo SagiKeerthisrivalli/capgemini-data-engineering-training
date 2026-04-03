@@ -1,5 +1,5 @@
 from pyspark.sql import SparkSession
-from pyspark.sql functions import count,col,sum,avg
+from pyspark.sql.functions import count,col,sum,avg
 spark=SparkSession.builder.getOrCreate()
 
 data = [
