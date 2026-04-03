@@ -31,7 +31,7 @@ print("Before cleaning data")
 df.show()
 
 #Perform aggregation (customers per city)
-print("After cleaning data")
+print("Customers per city")
 clean_df.groupBy("city") \
         .agg(count("customer_id").alias("customer_count")) \
         .show()
