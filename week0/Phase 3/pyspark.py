@@ -23,8 +23,7 @@ print("Calculating daily sales")
 daily_sales = df.dropna(subset=["sale_date", "total_amount"]) \
                 .groupBy("sale_date") \
                 .agg(
-                    sum("total_amount").alias("total_sales"),
-                    count("*").alias("num_orders")
+                    sum("total_amount").alias("total_sales")
                 )
 daily_sales.show()
 
