@@ -16,7 +16,7 @@ sales = spark.read.format("csv") \
 customers_new = customers.dropna(subset=["customer_id", "city"])
 sales_new = sales.dropna(subset=["customer_id", "total_amount", "sale_date"]) \
                    .filter(col("total_amount") > 0)
-df = sales_clean.join(customers_clean, on="customer_id", how="inner")
+df = sales_new.join(customers_new, on="customer_id", how="inner")
 
 # Calculating daily sales
 print("Calculating daily sales")
